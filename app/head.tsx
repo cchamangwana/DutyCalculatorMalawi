@@ -15,7 +15,7 @@ export default function CustomHead() {
       <meta name="robots" content="index, follow" />
       <meta name="og:title" content="Import Duty Calculator in Malawi" />
       <meta name="og:description" content="Calculate import duty, excise, and VAT for vehicles in Malawi. Get accurate estimates for vehicle import taxes." />
-      <meta name="og:image" content="URL_to_your_page_image.jpg" />
+      <meta name="og:image" content="/images/calc-icon.webp" />
     </>
   );
 }
