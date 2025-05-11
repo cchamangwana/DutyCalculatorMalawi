@@ -172,29 +172,33 @@ const DutyCalculator: React.FC = () => {
                 </Button>
 
                 {totalDuty > 0 && (
-                    <Box mt={3}>
-                        <Text fontSize="lg">Vehicle Cost in MKW: {formatNumberWithCommas(Math.ceil(customsValueMK))}</Text>
-                        <Text fontSize="md">Total Duty Payable: MK {formatNumberWithCommas(Math.ceil(totalDuty))}</Text>
-                        <Text fontSize="sm" mt={2} color="gray.600">
-                            Breakdown:
-                            <List spacing={0}>
-                                <ListItem>
-                                    <ListIcon as={MdCheckCircle} color='green.500' />
-                                    Import Duty: K{formatNumberWithCommas(Math.ceil(importDuty))}
-                                </ListItem>
-                                <ListItem>
-                                    <ListIcon as={MdCheckCircle} color='green.500' />
-                                    Import Excise: K{formatNumberWithCommas(Math.ceil(importExcise))}
-                                </ListItem>
-                                <ListItem>
-                                    <ListIcon as={MdCheckCircle} color='green.500' />
-                                    Import VAT: K{formatNumberWithCommas(Math.ceil(importVAT))}
-                                </ListItem>
-                            </List>
-                        </Text>
+    <Box mt={5} p={4} borderWidth="1px" borderRadius="md">
+        <Text fontSize="lg" fontWeight="bold">Cost Summary</Text>
+        <Text>Vehicle + Port Costs (Customs Value): MK {formatNumberWithCommas(Math.ceil(customsValueMK))}</Text>
+        <Text>Total Duties: MK {formatNumberWithCommas(Math.ceil(totalDuty))}</Text>
+        <Text fontSize="md" fontWeight="semibold" mt={2}>
+            <strong>Total Landed Cost:</strong> MK {formatNumberWithCommas(Math.ceil(customsValueMK + totalDuty))}
+        </Text>
 
-                    </Box>
-                )}
+        <Text fontSize="sm" mt={4} color="gray.600">
+            Breakdown:
+            <List spacing={0}>
+                <ListItem>
+                    <ListIcon as={MdCheckCircle} color='green.500' />
+                    Import Duty: K{formatNumberWithCommas(Math.ceil(importDuty))}
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={MdCheckCircle} color='green.500' />
+                    Import Excise: K{formatNumberWithCommas(Math.ceil(importExcise))}
+                </ListItem>
+                <ListItem>
+                    <ListIcon as={MdCheckCircle} color='green.500' />
+                    Import VAT: K{formatNumberWithCommas(Math.ceil(importVAT))}
+                </ListItem>
+            </List>
+        </Text>
+    </Box>
+)}
             </Box>
         </Container>
     );
